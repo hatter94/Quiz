@@ -1,20 +1,31 @@
+//varibles 
+$background-color:aliceblue;
+$base-font:sans-serif;
+$margin-left:50px;
+$padding:10px;
+//base css
 /* Quiz styles */
 
-header {
-    border: 2px solid #064277;
-    border-radius: 20px;
+@mixin border($border:2px, $border-radius:20px) {
+    border: $border solid  #064277;
+    border-radius: $border-radius;
+    }
+
+header {@include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
-    text-align: center;
+    padding: $padding;
+    background-color: $background-color;
+    
 }
 
 body {
     width: 600px;
     margin: auto;
-    font-family:sans-serif;
-    font-size: 1em;
-    font-style:oblique;
+    font:{
+        family:$base-font;
+        size: 1em;
+        style:oblique;
+    }
     background-color: #dadadb
 }
 
@@ -23,18 +34,14 @@ h1 {
     color:#58a0e0;
 }
 
-#content {
-    border: 2px solid #064277;
-    border-radius: 20px;
+#content {@include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $background-color;
 }
 
-#list{
-    border: 2px solid #064277;
-    border-radius: 20px;
-    background-color: aliceblue;
+#list{@include border;
+    background-color: $background-color;
 }
 
 h2 {
@@ -42,38 +49,38 @@ h2 {
 }
 
 h3 {
-    margin-left: 50px;
+    margin-left: $margin-left;
     color:#58a0e0
 }
 
 ul{
-    margin-left: 50px;
+    margin-left: $margin-left;
 }
 
 p{
-    font-family: serif;
-    font-style:normal;
+    font:{
+        family: serif;
+        style:normal;
+    }
 }
 
-.samplepara {
-    border: 3px solid #58a0e0;
-    border-radius: 5px;
-    padding: 10px;
+.samplepara {@include border(3px, 5px);
+    padding: $padding;
     background-color: white;
 }
 
-footer {
-    border: 2px solid #064277;
-    border-radius: 20px;
+footer {@include border;
     margin: 10px auto;
-    padding: 10px;
-    background-color: aliceblue;
+    padding: $padding;
+    background-color: $background-color;
 }
 
 #footer {
-    font-size: .75em;
-    font-style:italic;
-    font-weight: bold;
+    font:{
+        size: .75em;
+        style:italic;
+        weight: bold;
+    }
     color: #064277;
     text-align: center;
 }
